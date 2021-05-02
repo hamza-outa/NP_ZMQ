@@ -32,11 +32,13 @@ fullStr = createString(userData)
 # sub connectie
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
-socket.connect("tcp://127.0.0.1:5006")
+#socket.connect("tcp://127.0.0.1:5006")
+socket.connect("tcp://benternet.pxl-ea-ict.be:24042")
 
 #push connectie
 push = context.socket(zmq.PUSH)
-push.connect("tcp://127.0.0.1:5005")
+#push.connect("tcp://127.0.0.1:5005")
+push.connect("tcp://benternet.pxl-ea-ict.be:24041")
 #temperature en weather description zijn standaard
 push.send_string(fullStr)      #API*location*temp,hum,weathDesc*param:units
 #weather*harare*uv_index,humidity*m*hamza
