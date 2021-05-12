@@ -25,33 +25,40 @@ def getWeather(param, choices, topic):
         "weatherDesc": response.json()["current"]["weather_descriptions"][0],
         "temperature": response.json()["current"]["temperature"],
     }
-
-    for x in range(len(choices)-1):
-        weatherData[choices[x]] = response.json()["current"][choices[x]]
+    if choices := 0:
+        for x in range(len(choices)-1):
+            weatherData[choices[x]] = response.json()["current"][choices[x]]
 
     weatherDataJSON = json.dumps(weatherData)
     return topic + ' ' + weatherDataJSON
 
-socket.subscribe("")
-dataRecv = socket.recv_string()
-print(dataRecv)
-test = dataRecv.split("*")
-API = test[0]
-choices = test[2].split(",")
-topic = test[4]
+while True:
+    try:
+        socket.subscribe("")
+        dataRecv = socket.recv_string()
+        print(dataRecv)
 
-# test vorm is:
-# test[0] = API
-# test[1] = queryType
-# test[2] = keuzes voor data
-# test[3] = parameters
-#test[4] = naam (topic)
+        test = dataRecv.split("*")
+        API = test[0]
+        if len(test[2]) != 0:
+            choices = test[2].split(",")
+        topic = test[4]
 
-parsedData = {
-    "query" : test[1],
-    "units" : test[3]
-}
+        # test vorm is:
+        # test[0] = API
+        # test[1] = queryType
+        # test[2] = keuzes voor data
+        # test[3] = parameters
+        #test[4] = naam (topic)
 
-weer = getWeather(parsedData,choices,topic)
-print(weer)
-push.send_string(weer)
+        parsedData = {
+            "query" : test[1],
+            "units" : test[3]
+        }
+
+        weer = getWeather(parsedData,choices,topic)
+        print(weer)
+        push.send_string(weer)
+
+    except:
+        print("error")
