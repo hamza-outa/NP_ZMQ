@@ -38,6 +38,7 @@ socket.connect("tcp://benternet.pxl-ea-ict.be:24042")
 #push connectie
 push = context.socket(zmq.PUSH)
 #push.connect("tcp://127.0.0.1:5005")
+
 push.connect("tcp://benternet.pxl-ea-ict.be:24041")
 #temperature en weather description zijn standaard
 push.send_string(fullStr)      #API*location*temp,hum,weathDesc*param:units
