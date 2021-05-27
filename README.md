@@ -29,7 +29,6 @@
   <li>precip</li>
   <li>humidity</li>
   <li>cloudcover</li>
-  <li>youre name and the location (spacebar delimited)</li>
   <li>feelslike</li>
   <li>uv_index</li>
   <li>visibility</li>
