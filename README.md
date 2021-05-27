@@ -1,4 +1,12 @@
 # <h1>network programming ZMQ opdracht</h1>
+<h2>requirements</h2>
+<p>
+  <ul>
+    <li>python 3.X</li>
+    <li>zmq library</li>
+  </ul> 
+</p>
+
 <h2>how to use?</h2>
 <p>you will be asked 3 questions:
   <ul>
