@@ -3,6 +3,7 @@ import time
 import requests
 import json
 
+
 #receive data
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
@@ -45,6 +46,7 @@ while True:
         print(dataRecv)
         test = dataRecv.split("*")
         API = test[0]
+
         if len(test[2]) != 0:
             choices = test[2].split(",")
         topic = test[4]

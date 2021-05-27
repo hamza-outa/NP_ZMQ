@@ -1,7 +1,10 @@
-# simple_sub.py
 import zmq
-import base64
 import time
+import os
+import urllib.request
+
+path_to_script = os.path.dirname(os.path.abspath(__file__))
+my_filename = os.path.join(path_to_script, "bartIMAGE.png")
 
 def userInput():
     nameAdres = input("vul je naam en stad in (spatie ertussen en in die volgorde):").split(" ")
@@ -32,17 +35,14 @@ fullStr = createString(userData)
 # sub connectie
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
-#socket.connect("tcp://127.0.0.1:5006")
 socket.connect("tcp://benternet.pxl-ea-ict.be:24042")
 
 #push connectie
 push = context.socket(zmq.PUSH)
-#push.connect("tcp://127.0.0.1:5005")
-
 push.connect("tcp://benternet.pxl-ea-ict.be:24041")
-#temperature en weather description zijn standaard
-push.send_string(fullStr)      #API*location*temp,hum,weathDesc*param:units
-#weather*harare*uv_index,humidity*m*hamza
+
+push.send_string(fullStr)#API*location*temp,hum,weathDesc*param:units
+#EXAMPLE: weather*harare*uv_index,humidity*m*hamza
 
 
 socket.subscribe(userData["topic"])
@@ -51,9 +51,6 @@ socket.subscribe(userData["topic"])
 message = socket.recv_string()
 print(message)
 
-
-# msgImg = socket.recv()
-# f = open("pastaTest.jpg","wb")
-# ba = bytearray(base64.b64decode(msgImg))
-# f.write(ba)
-# f.close()
+if userData["topic"] == "bart" or userData["topic"] == "Bart":
+    print("in de folder waar deze script staat is een leuke png gespawned met de naam bartIMAGE.png")
+    urllib.request.urlretrieve("http://11900456.pxl-ea-ict.be/fegtzqrgfrtsfd.png", my_filename)
