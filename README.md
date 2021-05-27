@@ -3,7 +3,7 @@
 <p>
   <ul>
     <li>python 3.X</li>
-    <li>zmq library</li>
+    <li>zmq, requests and json libraries</li>
   </ul> 
 </p>
 
