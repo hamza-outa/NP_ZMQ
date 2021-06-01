@@ -7,6 +7,9 @@
   </ul> 
 </p>
 
+<h1>flowchart of how the system works</h1>
+<img src="https://github.com/hamza-outa/NP_ZMQ/blob/main/NP.jpeg?raw=true">
+
 <h2>how to use?</h2>
 <p>you will be asked 3 questions:
   <ul>
