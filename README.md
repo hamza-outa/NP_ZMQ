@@ -18,7 +18,15 @@
 </p>
 
 <h2>the commands</h2>
-<p><h3>the possible info you can request for:</h3>
+<p>
+<h3>how to send to the server</h3>
+<p>
+  weather*[location]*[extra info,]*[units]*[the topic on which the server send back]</br>
+  example: weather*harare*uv_index,humidity*m*hamza</br>
+  <b> always end extra info with a comma</b>
+</p>
+
+<h3>the possible info you can request for:</h3>
 <ul>
   <li>observation_time</li>
   <li>weather_code</li>
