@@ -41,7 +41,7 @@ def getWeather(param, choices, topic):
 
 while True:
     try:
-        socket.subscribe("")
+        socket.subscribe("weather")
         dataRecv = socket.recv_string()
         print(dataRecv)
         test = dataRecv.split("*")
