@@ -1,4 +1,6 @@
 # <h1>network programming ZMQ opdracht</h1>
+<h2>what is what?</h2>
+<p> main.py is the server and zmqTclient.py is the client</p>
 <h2>requirements</h2>
 <p>
   <ul>
