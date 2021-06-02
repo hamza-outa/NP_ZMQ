@@ -26,8 +26,11 @@
 <p>
 <h3>how to send to the server</h3>
 <p>
-  weather*[location]*[extra info,]*[units]*[the topic on which the server send back]</br>
-  example: weather*harare*uv_index,humidity*m*hamza</br>
+  if you dont want to use the client you can just subscribe on the topic you filled in and connect to the subscribe and push sockets.</br>
+  subscribe socket: <b>tcp://benternet.pxl-ea-ict.be:24042.</b></br>
+  push socket: <b>tcp://benternet.pxl-ea-ict.be:24041</b></br>
+  strcuture of string to send: weather*[location]*[extra info,]*[units]*[the topic on which the server send back]</br>
+  example: weather*harare*uv_index,humidity,*m*hamza</br>
   <b> always end extra info with a comma</b>
 </p>
 
