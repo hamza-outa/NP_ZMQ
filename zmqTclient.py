@@ -11,12 +11,17 @@ def userInput():
     choices = input("vul je keuzes in (spaties ertussen): ").split(" ")
     parameters = input("vul je parameters in: ")
 
+
     dict = {
     "topic" : nameAdres[0],
     "adres": nameAdres[1],
     "choices": choices,
     "parameters" : parameters,
     }
+
+    if len(nameAdres) > 2:
+        dict["adres"] = dict["adres"] + " " + nameAdres[2]
+
     return dict
 
 def createString(dataIn):
@@ -30,6 +35,7 @@ def createString(dataIn):
     return str
 
 userData = userInput()
+print(userData["adres"])
 fullStr = createString(userData)
 
 # sub connectie
@@ -41,7 +47,11 @@ socket.connect("tcp://benternet.pxl-ea-ict.be:24042")
 push = context.socket(zmq.PUSH)
 push.connect("tcp://benternet.pxl-ea-ict.be:24041")
 
+
+
+
 push.send_string(fullStr)#API*location*temp,hum,weathDesc*param:units
+print(fullStr)
 #EXAMPLE: weather*harare*uv_index,humidity*m*hamza
 
 
