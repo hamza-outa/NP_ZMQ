@@ -1,0 +1,6 @@
+WAT IK STUUR					|				WAT IK ONTVANG
+-------------------------------------------------------------------------------------------------------
+airQ*limburg*koek				|		koek de API kan je locatie niet vinden (controleer als je een hoofdletter hebt gebruikt)
+airQ*Antwerpen*hamza				|		hamza {"city": "Antwerpen", "parameter": "pm10", "value": 16.6, "unit": "\u00b5g/m\u00b3"}
+TIME*airQ*10*koek*starten			|		koek {"city": "Limburg", "parameter": "no2", "value": 9.5, "unit": "\u00b5g/m\u00b3"}
+TIME*weather*2*koek*starten			|		koek {"weatherDesc": "Sunny", "temperature": 20}
